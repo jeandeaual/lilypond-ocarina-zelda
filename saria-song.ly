@@ -1,22 +1,16 @@
 \version "2.20.0"
 
+\include "header.ily"
+
 \header {
   title = "Saria’s Song"
   subtitle = "Lost Woods"
-  piece = "The Legend of Zelda: Ocarina of Time"
-  composer = "Kōji Kondo"
-  tagline = ##f
-}
-
-#(set-global-staff-size 30)
-
-\paper {
-  indent = 0\mm
-  markup-system-spacing.padding = #5
-  system-system-spacing.padding = #8
 }
 
 song = \relative c'' {
+  \tempo 4 = 120
+  \time 2/4
+
   f8 a b4 | % 1
   f8 a b4 | % 2
   f8 a b e | % 3
@@ -36,20 +30,4 @@ song = \relative c'' {
   e2 \bar "|." % 16
 }
 
-\score {
-  \new Staff \with { midiInstrument = "ocarina" } {
-    \time 2/4
-    \clef "treble^8"
-    \song
-  }
-
-  \layout {
-    \context {
-      \Score
-      \omit ClefModifier
-    }
-  }
-  \midi {
-    \tempo 4 = 120
-  }
-}
+\include "score.ily"

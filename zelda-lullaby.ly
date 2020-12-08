@@ -1,21 +1,15 @@
 \version "2.20.0"
 
+\include "header.ily"
+
 \header {
   title = "Zelda’s Lullaby"
-  piece = "The Legend of Zelda: Ocarina of Time"
-  composer = "Kōji Kondo"
-  tagline = ##f
-}
-
-#(set-global-staff-size 30)
-
-\paper {
-  indent = 0\mm
-  markup-system-spacing.padding = #5
-  system-system-spacing.padding = #8
 }
 
 song = \relative c'' {
+  \tempo 4 = 104
+  \time 3/4
+
   e2 g4 | % 1
   d2 c8 d | % 2
   e2 g4 | % 3
@@ -40,20 +34,4 @@ song = \relative c'' {
   c'2. \bar "|." % 22
 }
 
-\score {
-  \new Staff \with { midiInstrument = "ocarina" } {
-    \time 3/4
-    \clef "treble^8"
-    \song
-  }
-
-  \layout {
-    \context {
-      \Score
-      \omit ClefModifier
-    }
-  }
-  \midi {
-    \tempo 4 = 104
-  }
-}
+\include "score.ily"

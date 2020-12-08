@@ -25,6 +25,11 @@ jobs:
         uses: docker://jeandeaual/lilypond:latest
         with:
           args: find . -mindepth 1 -maxdepth 1 -type f -name '*.ly' -exec lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg {} \;
+      - name: Fix includes for ly2video
+        # ly2video doesn't support include files (it doesn't copy them to its
+        # temporary directory), so replace the includes with the files' contents
+        # manually
+        run: for include in header score; do sed -i -e '/\\include\ \"'"${include}"'\.ily\"/r '"${include}"'.ily' -e '/\\include\ \"'"${include}"'\.ily\"/d' *.ly; done
       - name: Build video
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
