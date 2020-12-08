@@ -13,31 +13,71 @@ jobs:
           persist-credentials: false
       - name: Make the output directories
         run: mkdir -p build/{a4,letter,svg,midi,video}
-      - name: Build A4 PDF
-        uses: docker://jeandeaual/lilypond:latest
-        with:
-          args: find . -mindepth 1 -maxdepth 1 -type f -name '*.ly' -exec lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 {} \;
-      - name: Build Letter PDF
-        uses: docker://jeandeaual/lilypond:latest
-        with:
-          args: find . -mindepth 1 -maxdepth 1 -type f -name '*.ly' -exec lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter {} \;
-      - name: Build SVG
-        uses: docker://jeandeaual/lilypond:latest
-        with:
-          args: find . -mindepth 1 -maxdepth 1 -type f -name '*.ly' -exec lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg {} \;
       - name: Fix includes for ly2video
         # ly2video doesn't support include files (it doesn't copy them to its
         # temporary directory), so replace the includes with the files' contents
         # manually
         run: for include in header score; do sed -i -e '/\\include\ \"'"${include}"'\.ily\"/r '"${include}"'.ily' -e '/\\include\ \"'"${include}"'\.ily\"/d' *.ly; done
-      - name: Build video
+      - name: Build A4 PDF (Zelda's Lullaby)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
-          args: find . -mindepth 1 -maxdepth 1 -type f -name '*.ly' -exec sh -c 'ly2video -i "$1" -q 1 -r 300 -o "build/video/${1%.ly}.avi"' _ {} \;
-      - name: Make the video HTML5 compatible
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 zelda-lullaby.ly
+      - name: Build Letter PDF (Zelda's Lullaby)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
-          args: find build/video -type f -name '*.avi' -exec sh -c 'ffmpeg -i "$1" -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart "${1%.avi}.mp4"' _ {} \;
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter zelda-lullaby.ly
+      - name: Build SVG (Zelda's Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg zelda-lullaby.ly
+      - name: Build video (Zelda's Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i zelda-lullaby.ly -q 1 -r 300 -o build/video/zelda-lullaby.avi
+      - name: Make the video HTML5 compatible (Zelda's Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/zelda-lullaby.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/zelda-lullaby.mp4
+      - name: Build A4 PDF (Saria's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 saria-song.ly
+      - name: Build Letter PDF (Saria's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter saria-song.ly
+      - name: Build SVG (Saria's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg saria-song.ly
+      - name: Build video (Saria's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i saria-song.ly -q 1 -r 300 -o build/video/saria-song.avi
+      - name: Make the video HTML5 compatible (Saria's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/saria-song.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/saria-song.mp4
+      - name: Build A4 PDF (Song of Storms)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 song-of-storms.ly
+      - name: Build Letter PDF (Song of Storms)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter song-of-storms.ly
+      - name: Build SVG (Song of Storms)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg song-of-storms.ly
+      - name: Build video (Song of Storms)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i song-of-storms.ly -q 1 -r 300 -o build/video/song-of-storms.avi
+      - name: Make the video HTML5 compatible (Song of Storms)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/song-of-storms.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/song-of-storms.mp4
       - name: Remove extra video file(s)
         run: rm build/video/*.avi
       - name: Remove extra MIDI files
