@@ -4,6 +4,7 @@
 
 \header {
   title = "Zelda’s Lullaby"
+  piece = "The Legend of Zelda: Ocarina of Time"
 }
 
 song = \relative c'' {

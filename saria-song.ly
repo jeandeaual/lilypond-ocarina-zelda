@@ -5,6 +5,7 @@
 \header {
   title = "Saria’s Song"
   subtitle = "Lost Woods"
+  piece = "The Legend of Zelda: Ocarina of Time"
 }
 
 song = \relative c'' {

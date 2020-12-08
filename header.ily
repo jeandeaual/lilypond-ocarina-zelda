@@ -1,5 +1,4 @@
 \header {
-  piece = "The Legend of Zelda: Ocarina of Time"
   composer = "Kōji Kondo"
   tagline = ##f
 }
