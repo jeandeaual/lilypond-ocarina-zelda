@@ -1,8 +1,10 @@
+staff = \new Staff \with { midiInstrument = "ocarina" } {
+  \clef "treble^8"
+  \song
+}
+
 \score {
-  \new Staff \with { midiInstrument = "ocarina" } {
-    \clef "treble^8"
-    \song
-  }
+  \staff
 
   \layout {
     \context {
@@ -10,5 +12,10 @@
       \omit ClefModifier
     }
   }
+}
+
+\score {
+  \unfoldRepeats \articulate \staff
+
   \midi {}
 }

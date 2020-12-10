@@ -1,3 +1,5 @@
+\include "articulate.ly"
+
 \header {
   composer = "Kōji Kondo"
   author = \markup \fromproperty #'header:composer
