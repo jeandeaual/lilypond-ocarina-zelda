@@ -49,6 +49,26 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: ffmpeg -i build/video/zelda-lullaby.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/zelda-lullaby.mp4
+      - name: Build A4 PDF (Epona's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 epona-song.ly
+      - name: Build Letter PDF (Epona's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter epona-song.ly
+      - name: Build SVG (Epona's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg epona-song.ly
+      - name: Build video (Epona's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i epona-song.ly -q 1 -r 300 -o build/video/epona-song.avi
+      - name: Make the video HTML5 compatible (Epona's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/epona-song.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/epona-song.mp4
       - name: Build A4 PDF (Saria's Song)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
