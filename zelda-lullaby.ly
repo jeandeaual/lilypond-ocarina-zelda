@@ -1,11 +1,11 @@
 \version "2.20.0"
 
-\include "header.ily"
-
 \header {
   title = "Zelda’s Lullaby"
   piece = "The Legend of Zelda: Ocarina of Time"
 }
+
+\include "header.ily"
 
 song = \relative c'' {
   \tempo 4 = 104

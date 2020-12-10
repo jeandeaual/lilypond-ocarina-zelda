@@ -1,12 +1,12 @@
 \version "2.20.0"
 
-\include "header.ily"
-
 \header {
   title = "Saria’s Song"
   subtitle = "Lost Woods"
   piece = "The Legend of Zelda: Ocarina of Time"
 }
+
+\include "header.ily"
 
 song = \relative c'' {
   \tempo 4 = 120
