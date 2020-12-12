@@ -281,6 +281,19 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: ffmpeg -i build/video/prelude-of-light.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/prelude-of-light.mp4
+      # Ocarina of Time Book
+      - name: Build A4 PDF (Ocarina of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dpaper-size=\"a4\" -o build/a4 zelda-ocarina-of-time-ocarina-songs.ly
+      - name: Build Letter PDF (Ocarina of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dpaper-size=\"letter\" -o build/letter zelda-ocarina-of-time-ocarina-songs.ly
+      - name: Build SVG (Ocarina of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dpaper-size=\"a4\" -o build/svg zelda-ocarina-of-time-ocarina-songs.ly
       # Cleanup
       - name: Remove extra video file(s)
         run: rm build/video/*.avi
