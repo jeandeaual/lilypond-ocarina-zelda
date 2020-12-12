@@ -8,7 +8,7 @@
 \include "header.ily"
 
 song = \relative c'' {
-  \tempo 4 = 200
+  \tempo 4 = 160
   \time 3/4
 
   d8 f d'2 | % 1
