@@ -20,6 +20,6 @@
 
 \paper {
   indent = 0\mm
-  markup-system-spacing.padding = #5
+  markup-system-spacing.padding = #6
   system-system-spacing.padding = #8
 }
