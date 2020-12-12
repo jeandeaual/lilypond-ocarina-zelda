@@ -29,6 +29,7 @@ jobs:
         # temporary directory), so replace the includes with the files' contents
         # manually
         run: for include in header score; do sed -i -e '/\\include\ \"'"${include}"'\.ily\"/r '"${include}"'.ily' -e '/\\include\ \"'"${include}"'\.ily\"/d' *.ly; done
+      # Zelda's Lullaby
       - name: Build A4 PDF (Zelda's Lullaby)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
@@ -49,6 +50,7 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: ffmpeg -i build/video/zelda-lullaby.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/zelda-lullaby.mp4
+      # Epona's Song
       - name: Build A4 PDF (Epona's Song)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
@@ -69,6 +71,7 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: ffmpeg -i build/video/epona-song.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/epona-song.mp4
+      # Saria's Song
       - name: Build A4 PDF (Saria's Song)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
@@ -89,6 +92,7 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: ffmpeg -i build/video/saria-song.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/saria-song.mp4
+      # Song of Storm
       - name: Build A4 PDF (Song of Storms)
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
@@ -109,12 +113,182 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: ffmpeg -i build/video/song-of-storms.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/song-of-storms.mp4
+      # Sun's Song
+      - name: Build A4 PDF (Sun's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 sun-song.ly
+      - name: Build Letter PDF (Sun's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter sun-song.ly
+      - name: Build SVG (Sun's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg sun-song.ly
+      - name: Build video (Sun's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i sun-song.ly -q 1 -r 300 -o build/video/sun-song.avi
+      - name: Make the video HTML5 compatible (Sun's Song)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/sun-song.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/sun-song.mp4
+      # Song of Time
+      - name: Build A4 PDF (Song of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 song-of-time.ly
+      - name: Build Letter PDF (Song of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter song-of-time.ly
+      - name: Build SVG (Song of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg song-of-time.ly
+      - name: Build video (Song of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i song-of-time.ly -q 1 -r 300 -o build/video/song-of-time.avi
+      - name: Make the video HTML5 compatible (Song of Time)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/song-of-time.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/song-of-time.mp4
+      # Minuet of Forest
+      - name: Build A4 PDF (Minuet of Forest)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 minuet-of-forest.ly
+      - name: Build Letter PDF (Minuet of Forest)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter minuet-of-forest.ly
+      - name: Build SVG (Minuet of Forest)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg minuet-of-forest.ly
+      - name: Build video (Minuet of Forest)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i minuet-of-forest.ly -q 1 -r 300 -o build/video/minuet-of-forest.avi
+      - name: Make the video HTML5 compatible (Minuet of Forest)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/minuet-of-forest.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/minuet-of-forest.mp4
+      # Bolero of Fire
+      - name: Build A4 PDF (Bolero of Fire)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 bolero-of-fire.ly
+      - name: Build Letter PDF (Bolero of Fire)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter bolero-of-fire.ly
+      - name: Build SVG (Bolero of Fire)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg bolero-of-fire.ly
+      - name: Build video (Bolero of Fire)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i bolero-of-fire.ly -q 1 -r 300 -o build/video/bolero-of-fire.avi
+      - name: Make the video HTML5 compatible (Bolero of Fire)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/bolero-of-fire.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/bolero-of-fire.mp4
+      # Serenade of Water
+      - name: Build A4 PDF (Serenade of Water)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 serenade-of-water.ly
+      - name: Build Letter PDF (Serenade of Water)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter serenade-of-water.ly
+      - name: Build SVG (Serenade of Water)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg serenade-of-water.ly
+      - name: Build video (Serenade of Water)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i serenade-of-water.ly -q 1 -r 300 -o build/video/serenade-of-water.avi
+      - name: Make the video HTML5 compatible (Serenade of Water)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/serenade-of-water.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/serenade-of-water.mp4
+      # Requiem of Spirit
+      - name: Build A4 PDF (Requiem of Spirit)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 requiem-of-spirit.ly
+      - name: Build Letter PDF (Requiem of Spirit)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter requiem-of-spirit.ly
+      - name: Build SVG (Requiem of Spirit)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg requiem-of-spirit.ly
+      - name: Build video (Requiem of Spirit)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i requiem-of-spirit.ly -q 1 -r 300 -o build/video/requiem-of-spirit.avi
+      - name: Make the video HTML5 compatible (Requiem of Spirit)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/requiem-of-spirit.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/requiem-of-spirit.mp4
+      # Nocturne of Shadow
+      - name: Build A4 PDF (Nocturne of Shadow)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 nocturne-of-shadow.ly
+      - name: Build Letter PDF (Nocturne of Shadow)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter nocturne-of-shadow.ly
+      - name: Build SVG (Nocturne of Shadow)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg nocturne-of-shadow.ly
+      - name: Build video (Nocturne of Shadow)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i nocturne-of-shadow.ly -q 1 -r 300 -o build/video/nocturne-of-shadow.avi
+      - name: Make the video HTML5 compatible (Nocturne of Shadow)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/nocturne-of-shadow.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/nocturne-of-shadow.mp4
+      # Prelude of Light
+      - name: Build A4 PDF (Prelude of Light)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 prelude-of-light.ly
+      - name: Build Letter PDF (Prelude of Light)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter prelude-of-light.ly
+      - name: Build SVG (Prelude of Light)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg prelude-of-light.ly
+      - name: Build video (Prelude of Light)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i prelude-of-light.ly -q 1 -r 300 -o build/video/prelude-of-light.avi
+      - name: Make the video HTML5 compatible (Prelude of Light)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/prelude-of-light.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/prelude-of-light.mp4
+      # Cleanup
       - name: Remove extra video file(s)
         run: rm build/video/*.avi
       - name: Remove extra MIDI files
         run: |
           cp build/a4/*.midi build/midi/
           find . -depth -maxdepth 3 -regex '.*\/midi\/.*' -prune -o -type f -name '*.midi' -delete
+      # Upload
       - name: Get short SHA
         id: slug
         run: echo "::set-output name=sha7::$(echo ${GITHUB_SHA} | cut -c1-7)"
