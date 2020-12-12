@@ -2,7 +2,7 @@
 
 \header {
   title = "Song of Storms"
-  piece = "The Legend of Zelda: Ocarina of Time"
+  piece = \markup \left-column { "The Legend of Zelda:" "Ocarina of Time" }
 }
 
 \include "header.ily"
