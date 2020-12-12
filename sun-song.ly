@@ -11,12 +11,12 @@ song = \relative c'' {
   \tempo 4 = 130
 
   \time 5/8
-  a'8 f d' r4 | % 1
-  a8 f d' r4 | % 2
+  e8 c a' r4 | % 1
+  e8 c a' r4 | % 2
 
   \time 3/8
-  r16 a c d e f | % 3
-  g4.\fermata \bar "|." % 4
+  g16 a b c d e | % 3
+  f4.\fermata \bar "|." % 4
 }
 
 \include "score.ily"
