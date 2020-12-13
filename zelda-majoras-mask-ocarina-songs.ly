@@ -1,7 +1,7 @@
 \version "2.20.0"
 
 \header {
-  title = "The Legend of Zelda: Ocarina of Time"
+  title = "The Legend of Zelda: Majora’s Mask"
   subtitle = "Ocarina Songs"
   composer = "Kōji Kondo"
   author = \markup \fromproperty #'header:composer
@@ -24,38 +24,32 @@
   indent = 0\mm
 }
 
-\include "zelda-lullaby.ily"
+\include "song-of-time.ily"
+\include "book-display-piece.ily"
+
+\include "sonata-of-awakening.ily"
+\include "book-display-piece.ily"
+
+\include "song-of-healing.ily"
+\include "book-display-piece.ily"
+
+\include "goron-lullaby.ily"
 \include "book-display-piece.ily"
 
 \include "epona-song.ily"
 \include "book-display-piece.ily"
 
-\include "saria-song.ily"
+\include "new-wave-bossa-nova.ily"
+\include "book-display-piece.ily"
+
+\include "song-of-soaring.ily"
+\include "book-display-piece.ily"
+
+\include "elegy-of-emptiness.ily"
 \include "book-display-piece.ily"
 
 \include "song-of-storms.ily"
 \include "book-display-piece.ily"
 
-\include "sun-song.ily"
-\include "book-display-piece.ily"
-
-\include "song-of-time.ily"
-\include "book-display-piece.ily"
-
-\include "minuet-of-forest.ily"
-\include "book-display-piece.ily"
-
-\include "bolero-of-fire.ily"
-\include "book-display-piece.ily"
-
-\include "serenade-of-water.ily"
-\include "book-display-piece.ily"
-
-\include "requiem-of-spirit.ily"
-\include "book-display-piece.ily"
-
-\include "nocturne-of-shadow.ily"
-\include "book-display-piece.ily"
-
-\include "prelude-of-light.ily"
+\include "oath-to-order.ily"
 \include "book-display-piece.ily"

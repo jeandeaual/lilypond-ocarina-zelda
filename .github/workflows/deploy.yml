@@ -294,6 +294,166 @@ jobs:
         uses: docker://jeandeaual/lilypond:devel-ly2video
         with:
           args: lilypond --svg -dno-point-and-click -dpaper-size=\"a4\" -o build/svg zelda-ocarina-of-time-ocarina-songs.ly
+      # Sonata of Awakening
+      - name: Build A4 PDF (Sonata of Awakening)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 sonata-of-awakening.ly
+      - name: Build Letter PDF (Sonata of Awakening)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter sonata-of-awakening.ly
+      - name: Build SVG (Sonata of Awakening)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg sonata-of-awakening.ly
+      - name: Build video (Sonata of Awakening)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i sonata-of-awakening.ly -q 1 -r 300 -o build/video/sonata-of-awakening.avi
+      - name: Make the video HTML5 compatible (Sonata of Awakening)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/sonata-of-awakening.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/sonata-of-awakening.mp4
+      # Song of Healing
+      - name: Build A4 PDF (Song of Healing)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 song-of-healing.ly
+      - name: Build Letter PDF (Song of Healing)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter song-of-healing.ly
+      - name: Build SVG (Song of Healing)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg song-of-healing.ly
+      - name: Build video (Song of Healing)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i song-of-healing.ly -q 1 -r 300 -o build/video/song-of-healing.avi
+      - name: Make the video HTML5 compatible (Song of Healing)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/song-of-healing.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/song-of-healing.mp4
+      # Goron Lullaby
+      - name: Build A4 PDF (Goron Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 goron-lullaby.ly
+      - name: Build Letter PDF (Goron Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter goron-lullaby.ly
+      - name: Build SVG (Goron Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg goron-lullaby.ly
+      - name: Build video (Goron Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i goron-lullaby.ly -q 1 -r 300 -o build/video/goron-lullaby.avi
+      - name: Make the video HTML5 compatible (Goron Lullaby)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/goron-lullaby.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/goron-lullaby.mp4
+      # New Wave Bossa Nova
+      - name: Build A4 PDF (New Wave Bossa Nova)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 new-wave-bossa-nova.ly
+      - name: Build Letter PDF (New Wave Bossa Nova)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter new-wave-bossa-nova.ly
+      - name: Build SVG (New Wave Bossa Nova)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg new-wave-bossa-nova.ly
+      - name: Build video (New Wave Bossa Nova)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i new-wave-bossa-nova.ly -q 1 -r 300 -o build/video/new-wave-bossa-nova.avi
+      - name: Make the video HTML5 compatible (New Wave Bossa Nova)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/new-wave-bossa-nova.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/new-wave-bossa-nova.mp4
+      # Song of Soaring
+      - name: Build A4 PDF (Song of Soaring)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 song-of-soaring.ly
+      - name: Build Letter PDF (Song of Soaring)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter song-of-soaring.ly
+      - name: Build SVG (Song of Soaring)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg song-of-soaring.ly
+      - name: Build video (Song of Soaring)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i song-of-soaring.ly -q 1 -r 300 -o build/video/song-of-soaring.avi
+      - name: Make the video HTML5 compatible (Song of Soaring)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/song-of-soaring.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/song-of-soaring.mp4
+      # Elegy of Emptiness
+      - name: Build A4 PDF (Elegy of Emptiness)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 elegy-of-emptiness.ly
+      - name: Build Letter PDF (Elegy of Emptiness)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter elegy-of-emptiness.ly
+      - name: Build SVG (Elegy of Emptiness)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg elegy-of-emptiness.ly
+      - name: Build video (Elegy of Emptiness)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i elegy-of-emptiness.ly -q 1 -r 300 -o build/video/elegy-of-emptiness.avi
+      - name: Make the video HTML5 compatible (Elegy of Emptiness)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/elegy-of-emptiness.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/elegy-of-emptiness.mp4
+      # Oath to Order
+      - name: Build A4 PDF (Oath to Order)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/a4 oath-to-order.ly
+      - name: Build Letter PDF (Oath to Order)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dmidi-extension="midi" -dpaper-size=\"letter\" -o build/letter oath-to-order.ly
+      - name: Build SVG (Oath to Order)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dmidi-extension="midi" -dpaper-size=\"a4\" -o build/svg oath-to-order.ly
+      - name: Build video (Oath to Order)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ly2video -i oath-to-order.ly -q 1 -r 300 -o build/video/oath-to-order.avi
+      - name: Make the video HTML5 compatible (Oath to Order)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: ffmpeg -i build/video/oath-to-order.avi -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k -map_channel 0.1.1 -movflags +faststart build/video/oath-to-order.mp4
+      # Majora's Mask Book
+      - name: Build A4 PDF (Majora's Mask)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dpaper-size=\"a4\" -o build/a4 zelda-majoras-mask-ocarina-songs.ly
+      - name: Build Letter PDF (Majora's Mask)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond -dno-point-and-click -dembed-source-code -dpaper-size=\"letter\" -o build/letter zelda-majoras-mask-ocarina-songs.ly
+      - name: Build SVG (Majora's Mask)
+        uses: docker://jeandeaual/lilypond:devel-ly2video
+        with:
+          args: lilypond --svg -dno-point-and-click -dpaper-size=\"a4\" -o build/svg zelda-majoras-mask-ocarina-songs.ly
       # Cleanup
       - name: Remove extra video file(s)
         run: rm build/video/*.avi
