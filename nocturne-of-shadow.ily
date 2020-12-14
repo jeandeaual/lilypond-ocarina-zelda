@@ -12,5 +12,5 @@ song = \relative c'' {
   f1 | % 4
   g4 f f8 c g' f | % 5
   gis4 fis fis8 d gis fis | % 6
-  f1\fermata \bar "|." % 7
+  f1 \bar "|." % 7
 }

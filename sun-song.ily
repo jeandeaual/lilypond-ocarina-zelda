@@ -11,5 +11,5 @@ song = \relative c'' {
 
   \time 3/8
   g16 a b c d e | % 3
-  f4.\fermata \bar "|." % 4
+  f4. \bar "|." % 4
 }
