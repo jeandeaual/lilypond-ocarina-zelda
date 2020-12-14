@@ -10,7 +10,6 @@ song = \relative c'' {
   d,8 f d'2 | % 2
   e4. f8 e f | % 3
   e c a2 | % 4
-  \break
   a4 d, f8 g | % 5
   a2. | % 6
   a4 d, f8 g | % 7
@@ -20,8 +19,7 @@ song = \relative c'' {
   d,8 f d'2 | % 10
   e4. f8 e f | % 11
   e c a2 | % 12
-  \break
   a4 d, f8 g | % 13
   a2 a4 | % 14
-  d,\accent r2 \bar "|." % 15
+  d, r2 \bar "|." % 15
 }
