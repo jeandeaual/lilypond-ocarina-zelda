@@ -43,6 +43,8 @@
 \include "song-of-time.ily"
 \include "book-display-piece.ily"
 
+\pageBreak
+
 \include "minuet-of-forest.ily"
 \include "book-display-piece.ily"
 

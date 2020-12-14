@@ -28,28 +28,30 @@
 \include "song-of-time.ily"
 \include "book-display-piece.ily"
 
-\include "sonata-of-awakening.ily"
-\include "book-display-piece.ily"
-
 \include "song-of-healing.ily"
-\include "book-display-piece.ily"
-
-\include "goron-lullaby.ily"
 \include "book-display-piece.ily"
 
 \include "epona-song.ily"
 \include "book-display-piece.ily"
 
-\include "new-wave-bossa-nova.ily"
-\include "book-display-piece.ily"
-
 \include "song-of-soaring.ily"
 \include "book-display-piece.ily"
 
-\include "elegy-of-emptiness.ily"
+\include "song-of-storms.ily"
 \include "book-display-piece.ily"
 
-\include "song-of-storms.ily"
+\pageBreak
+
+\include "sonata-of-awakening.ily"
+\include "book-display-piece.ily"
+
+\include "goron-lullaby.ily"
+\include "book-display-piece.ily"
+
+\include "new-wave-bossa-nova.ily"
+\include "book-display-piece.ily"
+
+\include "elegy-of-emptiness.ily"
 \include "book-display-piece.ily"
 
 \include "oath-to-order.ily"
