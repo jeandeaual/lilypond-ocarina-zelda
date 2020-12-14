@@ -1,6 +1,5 @@
-\version "2.20.0"
-
 title = "Elegy of Emptiness"
+subtitle = ##f
 
 song = \relative c'' {
   \tempo 4 = 80

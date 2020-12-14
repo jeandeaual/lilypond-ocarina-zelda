@@ -1,6 +1,5 @@
-\version "2.20.0"
-
 title = "Zelda’s Lullaby"
+subtitle = ##f
 
 song = \relative c'' {
   \tempo 4 = 104

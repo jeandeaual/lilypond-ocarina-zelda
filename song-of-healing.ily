@@ -1,4 +1,5 @@
 title = "Song of Healing"
+subtitle = ##f
 
 song = \relative c'' {
   \tempo 4 = 80

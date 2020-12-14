@@ -1,6 +1,5 @@
-\version "2.20.0"
-
 title = "Epona’s Song"
+subtitle = ##f
 
 song = \relative c'' {
   \tempo 4 = 100

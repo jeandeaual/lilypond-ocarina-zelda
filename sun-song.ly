@@ -6,7 +6,8 @@
 
 \header {
   title = \title
-  piece = \markup \left-column { "The Legend of Zelda:" "Ocarina of Time" }
+  #(define subtitle (if (defined? 'subtitle) subtitle))
+  subsubtitle = \markup \center-column { "The Legend of Zelda:" "Ocarina of Time" }
 }
 
 \include "score.ily"

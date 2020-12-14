@@ -1,6 +1,5 @@
-\version "2.20.0"
-
 title = "Song of Storms"
+subtitle = ##f
 
 song = \relative c'' {
   \tempo 4 = 160

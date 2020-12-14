@@ -1,6 +1,5 @@
-\version "2.20.0"
-
 title = "Saria’s Song"
+subtitle = "Lost Woods"
 
 song = \relative c'' {
   \tempo 4 = 120

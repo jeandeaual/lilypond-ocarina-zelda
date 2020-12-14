@@ -1,4 +1,5 @@
 title = "Goron Lullaby"
+subtitle = ##f
 
 song = \relative c'' {
   \tempo 4 = 80

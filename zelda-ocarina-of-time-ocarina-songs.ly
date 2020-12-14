@@ -10,6 +10,7 @@
     \fromproperty #'header:title
     "” by "
     \fromproperty #'header:composer
+    "."
   }
   keywords = #(string-join '(
     "music"
