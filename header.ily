@@ -4,8 +4,11 @@
   subject = \markup \concat {
     "Ocarina partition for “"
     \fromproperty #'header:title
-    "” by "
+    "” (from “"
+    \fromproperty #'header:subsubtitle
+    "”) by "
     \fromproperty #'header:composer
+    "."
   }
   keywords = #(string-join '(
     "music"
