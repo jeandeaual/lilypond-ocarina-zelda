@@ -70,14 +70,14 @@ tspan { white-space: pre; }
 <g transform="translate(40.0913, 27.0444)">
 <rect x="-0.0508" y="-1.8030" width="0.1015" height="3.1062" ry="0.0267" fill="currentColor"/>
 </g>
-<g transform="translate(46.3515, 27.0444)">
-<rect x="-0.0508" y="-3.0000" width="0.1015" height="3.3033" ry="0.0267" fill="currentColor"/>
-</g>
 <g transform="translate(42.5971, 27.0444)">
 <rect x="-0.0508" y="-1.9961" width="0.1015" height="2.7994" ry="0.0267" fill="currentColor"/>
 </g>
 <g transform="translate(45.0965, 27.5444)">
 <path transform="scale(0.0040, -0.0040)" d="M222 135c53 0 104 -27 104 -86c0 -71 -56 -120 -103 -148c-36 -22 -76 -36 -118 -36c-53 0 -105 27 -105 86c0 71 57 120 104 148c36 22 76 36 118 36z" fill="currentColor"/>
+</g>
+<g transform="translate(46.3515, 27.0444)">
+<rect x="-0.0508" y="-3.0000" width="0.1015" height="3.3033" ry="0.0267" fill="currentColor"/>
 </g>
 <g transform="translate(58.7748, 27.0444)">
 <rect x="-0.0508" y="-1.0000" width="0.1015" height="3.3033" ry="0.0267" fill="currentColor"/>

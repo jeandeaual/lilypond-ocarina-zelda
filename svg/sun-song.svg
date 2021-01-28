@@ -145,6 +145,9 @@ c-26 -22 -39 -54 -39 -85c0 -24 8 -47 24 -67l87 -104c2 -3 3 -5 3 -8c0 -7 -7 -14 -
 <g transform="translate(24.1435, 28.3780)">
 <path transform="scale(0.0040, -0.0040)" d="M222 135c53 0 104 -27 104 -86c0 -71 -56 -120 -103 -148c-36 -22 -76 -36 -118 -36c-53 0 -105 27 -105 86c0 71 57 120 104 148c36 22 76 36 118 36z" fill="currentColor"/>
 </g>
+<g transform="translate(25.3986, 26.3780)">
+<rect x="-0.0508" y="-1.0099" width="0.1015" height="2.8132" ry="0.0267" fill="currentColor"/>
+</g>
 <g transform="translate(13.4828, 26.3780)">
 <rect x="-0.0508" y="-1.0099" width="0.1015" height="2.8132" ry="0.0267" fill="currentColor"/>
 </g>
@@ -192,8 +195,5 @@ c-26 -22 -39 -54 -39 -85c0 -24 8 -47 24 -67l87 -104c2 -3 3 -5 3 -8c0 -7 -7 -14 -
 </g>
 <g transform="translate(30.4102, 26.3780)">
 <rect x="-0.0508" y="-1.9901" width="0.1015" height="2.2933" ry="0.0267" fill="currentColor"/>
-</g>
-<g transform="translate(25.3986, 26.3780)">
-<rect x="-0.0508" y="-1.0099" width="0.1015" height="2.8132" ry="0.0267" fill="currentColor"/>
 </g>
 </svg>
